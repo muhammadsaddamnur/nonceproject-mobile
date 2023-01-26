@@ -8,11 +8,11 @@ import '../../../../core/failure/failure.dart';
 import '../../../../core/usecase/usecase.dart';
 
 @LazySingleton()
-class GenerateFromMnemonic
+class GenerateFromRandom
     extends UseCase<GenerateEntity, NoParams, GenerateRepository> {
   @override
   Future<Either<Failure, GenerateEntity>> call(NoParams params) =>
-      repo.generateFromMnemonic();
+      repo.generateFromRandom();
 
   @override
   GenerateRepository get repo => getIt<GenerateRepository>();

@@ -1,10 +1,10 @@
 part of 'register_cubit.dart';
 
-abstract class RegisterState extends Equatable {
-  const RegisterState();
-
-  @override
-  List<Object> get props => [];
+@freezed
+class RegisterState with _$RegisterState {
+  const factory RegisterState.initial() = Initial;
+  const factory RegisterState.success({
+    GenerateEntity? generateEntity,
+  }) = Success;
+  const factory RegisterState.saved() = Saved;
 }
-
-class RegisterInitial extends RegisterState {}
